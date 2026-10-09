@@ -63,6 +63,11 @@ export default defineConfig([
   {
     ...betterTailwindcss.configs.recommended,
     files: ["**/*.{jsx,tsx}"],
+    rules: {
+      ...betterTailwindcss.configs.recommended.rules,
+      // Fights with Prettier on long class strings.
+      "better-tailwindcss/enforce-consistent-line-wrapping": "off",
+    },
     settings: {
       "better-tailwindcss": {
         entryPoint: "public/styles/global.css",
