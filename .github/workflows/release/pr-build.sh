@@ -3,4 +3,4 @@
 set -euo pipefail
 
 echo "Construindo imagem Docker"
-docker build --build-arg TOKEN_GITHUB=${TOKEN_GITHUB} -t teste .
+docker build -t teste .

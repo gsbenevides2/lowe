@@ -13,7 +13,8 @@
     "db:studio": "bun --bun run drizzle-kit studio --config server/db/drizzle.config.ts",
     "lint": "bun --bun eslint .",
     "lint:fix": "bun --bun eslint . --fix",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "test": "bun test && bun test/check-coverage.ts"
   },
   "dependencies": {
     "@elysia/eden": "^1.4.10",
@@ -54,7 +55,10 @@
     "@eslint/js": "^10.0.1",
     "@eslint/json": "^2.1.1",
     "@eslint/markdown": "^8.0.3",
+    "@happy-dom/global-registrator": "^20.14.6",
     "@tailwindcss/cli": "^4.3.3",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/react": "^16.3.3",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "bun-plugin-tailwind": "^0.1.2",
@@ -66,6 +70,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-simple-import-sort": "^14.0.0",
     "globals": "^17.13.0",
+    "happy-dom": "^20.14.6",
     "jiti": "^2.7.0",
     "prettier": "^3.9.9",
     "typescript": "^6",

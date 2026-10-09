@@ -95,5 +95,16 @@ export default defineConfig([
     extends: ["css/recommended"],
     rules: { "css/no-invalid-at-rules": "off" },
   },
+  {
+    // Tests mock third-party shapes and use underscore-prefixed unused args.
+    files: ["test/**/*.{ts,tsx}"],
+    rules: {
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
+      ],
+    },
+  },
   eslintConfigPrettier,
 ]);

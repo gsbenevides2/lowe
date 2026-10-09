@@ -41,6 +41,14 @@ jobs:
         run: bun run lint
       - name: Typecheck
         run: bun run typecheck
+      - name: Run tests (100% coverage enforced)
+        run: bun run test
+      - name: Upload coverage report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: coverage/lcov.info
   release:
     needs: prepare-release
     runs-on: ubuntu-latest

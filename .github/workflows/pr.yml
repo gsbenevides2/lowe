@@ -48,6 +48,8 @@ jobs:
         run: bun run lint
       - name: Typecheck
         run: bun run typecheck
+      - name: Run tests (100% coverage enforced)
+        run: bun run test
   build:
     runs-on: ubuntu-latest
     steps:
@@ -56,8 +58,6 @@ jobs:
         with:
           fetch-depth: 0
       - name: Run Build Docker Image
-        env:
-          TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}
         run: |
           chmod +x .github/workflows/release/pr-build.sh
           .github/workflows/release/pr-build.sh
